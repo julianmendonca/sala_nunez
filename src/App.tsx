@@ -17,6 +17,7 @@ import RoomCard from "./components/RoomCard";
 import rooms from "./constants/rooms";
 import WhatsApp from "./icons/WhatsApp";
 import Wave from "react-wavify";
+import InstagramIcon from "./icons/InstagramIcon";
 
 const smallCards = [
   {
@@ -38,6 +39,11 @@ const smallCards = [
 
 export const App = () => (
   <ChakraProvider theme={theme}>
+    <style>{`
+      body{
+      overflow-x: hidden;
+      }
+    `}</style>
     <Flex
       alignItems="center"
       direction="column"
@@ -112,9 +118,17 @@ export const App = () => (
     </Section>
     <Box position="relative">
       <Box position="absolute" top="-80px" width="100%">
-        <Section background="rgba(50, 50, 50, 1)" textAlign="center" zIndex={2}>
+        <Section
+          background="rgba(50, 50, 50, 1)"
+          textAlign="center"
+          zIndex={2}
+          pb="10"
+        >
           <Text fontSize={["4xl", "6xl"]} textAlign="center" color="white">
             ¿Qué estás esperando?
+            <a href="https://www.instagram.com/salasdenunez/" target="_blank">
+              <InstagramIcon color="white" fontSize="80" />
+            </a>
           </Text>
           <Text fontSize="lg" textAlign="center" my="8" color="white">
             Reservá tu sala de ensayo y empezá a disfrutar de la música como
