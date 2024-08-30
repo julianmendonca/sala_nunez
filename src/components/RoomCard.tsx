@@ -27,6 +27,11 @@ const RoomCard = ({
       ]}
       {...props}
     >
+      <style>{`
+      .carousel.carousel-slider {
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+      }
+      `}</style>
       <Box width={["80%", "40%"]}>
         <Carousel infiniteLoop>
           {images.map((image) => (
