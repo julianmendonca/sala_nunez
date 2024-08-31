@@ -6,7 +6,6 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
-import whatsappImage from "./assets/whatsapp.png";
 import logoImage from "./assets/sala-nunez-logo.png";
 import Section from "./components/Section";
 import SmallCard from "./components/SmallCard";
@@ -18,6 +17,8 @@ import rooms from "./constants/rooms";
 import WhatsApp from "./icons/WhatsApp";
 import Wave from "react-wavify";
 import InstagramIcon from "./icons/InstagramIcon";
+import GuitarAnimation from "./icons/GuitarAnimations";
+import DrumAnimation from "./icons/DrumAnimation";
 
 const smallCards = [
   {
@@ -67,45 +68,60 @@ export const App = () => (
         </Text>
       </Flex>
     </Flex>
-    <Wave
-      fill="white"
-      paused={false}
-      style={{ display: "flex", transform: "translateY(-60px)" }}
-      options={{
-        height: 20,
-        amplitude: 30,
-        speed: 0.15,
-        points: 3,
-      }}
-    />
-    <Flex direction="column" width="100%" alignItems="center" mb="24">
+    <Flex
+      direction="column"
+      width="100%"
+      alignItems="center"
+      mb="24"
+      position="relative"
+    >
+      <Wave
+        fill="white"
+        paused={false}
+        style={{ position: "absolute", left: 0, top: -100 }}
+        options={{
+          height: 20,
+          amplitude: 30,
+          speed: 0.15,
+          points: 3,
+        }}
+      />
       <Flex
         justifyContent="space-around"
         alignItems={["start", "center"]}
         direction={["column", "row"]}
-        ml={["6", ""]}
-        w="100%"
+        w={["80%", "100%"]}
+        zIndex={2}
       >
         {smallCards.map((card) => (
           <SmallCard {...card} mb={["8", "0"]} alignItems="center" />
         ))}
       </Flex>
-      <a
-        href="https://api.whatsapp.com/send/?phone=5491161549962"
-        target="_blank"
+      <Flex
+        direction="row"
+        alignItems="center"
+        justifyContent="space-around"
+        width="100%"
+        mt="20"
       >
-        <Button
-          mt="16"
-          fontSize={["2xl", "3xl"]}
-          px={["7", "20"]}
-          py={["7", "10"]}
-          backgroundColor="red.600"
-          textColor="white"
-          _hover={{ backgroundColor: "red.700" }}
+        <GuitarAnimation boxSize="13em" />
+        <a
+          href="https://api.whatsapp.com/send/?phone=5491161549962"
+          target="_blank"
         >
-          Reserva tu ensayo
-        </Button>
-      </a>
+          <Button
+            fontSize={["2xl", "3xl"]}
+            px={["7", "20"]}
+            py={["7", "10"]}
+            backgroundColor="red.600"
+            textColor="white"
+            _hover={{ backgroundColor: "red.700" }}
+          >
+            Reserva tu ensayo
+          </Button>
+        </a>
+        <DrumAnimation boxSize="13em" />
+      </Flex>
     </Flex>
     <Section background="#f3f3f3" pb="20">
       {rooms.map((room, index) => (
