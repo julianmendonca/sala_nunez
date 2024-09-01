@@ -128,7 +128,8 @@ export const App = () => (
         <RoomCard
           {...room}
           direction={index % 2 === 0 ? "left" : "right"}
-          mb="20"
+          margin="0px auto 100px auto"
+          width={["100%", "80%"]}
         />
       ))}
     </Section>
