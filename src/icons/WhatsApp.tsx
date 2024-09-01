@@ -2,7 +2,7 @@ import whatsappImage from "../assets/whatsapp.png";
 
 const WhatsApp = () => (
   <a
-    href="https://api.whatsapp.com/send/?phone=5491161549962"
+    href="https://wa.me/541161549962?text=Hola%21%0AMe%20gustaria%20reservar%20una%20sala%20de%20ensayo%21"
     target="_blank"
     style={{
       position: "fixed",
