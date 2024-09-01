@@ -22,7 +22,7 @@ import DrumAnimation from "./icons/DrumAnimation";
 
 const smallCards = [
   {
-    title: "Ensayos",
+    title: "Ensayo",
     description: "Equipamiento profesional",
     icon: <BandIcon boxSize="4em" />,
   },
@@ -55,18 +55,16 @@ export const App = () => (
       py="16"
     >
       <img src={logoImage} width="200" />
-      <Flex
-        direction="column"
-        textAlign="center"
-        maxW={["80%", "100%"]}
-        mt="14"
+      <Text
+        fontSize="lg"
+        color="gray.200"
+        mb="16"
+        maxW="80%"
+        mt="10"
+        textShadow="#000 2px 2px 1px"
       >
-        <Text fontSize="lg" color="gray.200" mb="16" maxW="40em">
-          El lugar perfecto para que los músicos den vida a su música. Sumergite
-          en un oasis sonoro donde la pasión y la creatividad se fusionan en
-          armonía.
-        </Text>
-      </Flex>
+        El lugar perfecto para que los músicos den vida a su música.
+      </Text>
     </Flex>
     <Flex
       direction="column"
@@ -87,22 +85,11 @@ export const App = () => (
         }}
       />
       <Flex
-        justifyContent="space-around"
-        alignItems={["start", "center"]}
-        direction={["column", "row"]}
-        w={["80%", "100%"]}
-        zIndex={2}
-      >
-        {smallCards.map((card) => (
-          <SmallCard {...card} mb={["8", "0"]} alignItems="center" />
-        ))}
-      </Flex>
-      <Flex
         direction="row"
         alignItems="center"
         justifyContent="space-around"
         width="100%"
-        mt="20"
+        mb="20"
       >
         <GuitarAnimation boxSize="13em" />
         <a
@@ -121,6 +108,17 @@ export const App = () => (
           </Button>
         </a>
         <DrumAnimation boxSize="13em" />
+      </Flex>
+      <Flex
+        justifyContent="space-around"
+        alignItems={["start", "center"]}
+        direction={["column", "row"]}
+        w={["80%", "100%"]}
+        zIndex={2}
+      >
+        {smallCards.map((card) => (
+          <SmallCard {...card} mb={["8", "0"]} alignItems="center" />
+        ))}
       </Flex>
     </Flex>
     <Section background="#f3f3f3" pb="20">

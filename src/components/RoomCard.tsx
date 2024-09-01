@@ -30,12 +30,11 @@ const RoomCard = ({
   const carouselRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: descriptionRed });
   const scale = useTransform(scrollYProgress, [1, 0], [1, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0.4, 1], [1, 0]);
   const y = useParallax(scrollYProgress, 150);
-  const offset = 0;
-  const descriptionY = useTransform(y, (value) => (value > offset ? value : 0));
+  const descriptionY = useTransform(y, (value) => (value > 0 ? value : 0));
   const carouselX = useTransform(y, (value) =>
-    value > offset ? (direction === "left" ? -value : value) : 0
+    value > 0 ? (direction === "left" ? -value : value) : 0
   );
   const boxShadow = `${
     direction === "left" ? "-20px" : "20px"
@@ -61,10 +60,10 @@ const RoomCard = ({
           id={id}
           style={isLargerThan800 ? { x: carouselX, scale, opacity } : {}}
         >
-          <Carousel infiniteLoop ref={carouselRef} thumbWidth={50}>
+          <Carousel infiniteLoop ref={carouselRef} thumbWidth={60}>
             {images.map((image) => (
               <div>
-                <img src={image} />
+                <img src={image} loading="lazy" />
               </div>
             ))}
           </Carousel>
