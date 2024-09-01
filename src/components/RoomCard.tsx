@@ -83,7 +83,7 @@ const RoomCard = ({
           <Text fontSize="6xl" textAlign={["center", position]}>
             {title}
           </Text>
-          <Text fontSize="xl" pt="6" pb="4">
+          <Text fontSize="xl" pt="6" pb="4" textAlign={["center", position]}>
             {size}
           </Text>
           {equipment.map((item) => (
