@@ -19,6 +19,7 @@ import Wave from "react-wavify";
 import InstagramIcon from "./icons/InstagramIcon";
 import GuitarAnimation from "./icons/GuitarAnimations";
 import DrumAnimation from "./icons/DrumAnimation";
+import { WPP_LINK } from "./constants/contact";
 
 const smallCards = [
   {
@@ -92,10 +93,7 @@ export const App = () => (
         mb="20"
       >
         <GuitarAnimation boxSize="13em" />
-        <a
-          href="https://api.whatsapp.com/send/?phone=5491161549962"
-          target="_blank"
-        >
+        <a href={WPP_LINK} target="_blank">
           <Button
             fontSize={["2xl", "3xl"]}
             px={["7", "20"]}
